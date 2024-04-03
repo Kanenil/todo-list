@@ -1,7 +1,7 @@
 import {MiddlewareConsumer, Module, NestModule} from "@nestjs/common";
 import {SeedingMiddleware} from "./seeding.middleware";
 import {TypeOrmModule} from "@nestjs/typeorm";
-import {Status} from "../status/status.entity";
+import {Status} from "../status/entities/status.entity";
 
 @Module({
     imports:[TypeOrmModule.forFeature([Status])]

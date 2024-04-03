@@ -1,7 +1,7 @@
 import {Injectable, NestMiddleware} from '@nestjs/common';
 import {Request, Response} from 'express';
 import {Repository} from 'typeorm';
-import {Status} from "../status/status.entity";
+import {Status} from "../status/entities/status.entity";
 import {InjectRepository} from "@nestjs/typeorm";
 
 @Injectable()

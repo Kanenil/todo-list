@@ -1,6 +1,4 @@
 import {Module} from '@nestjs/common';
-import {AppController} from './app.controller';
-import {AppService} from './app.service';
 import {ConfigModule, ConfigService} from '@nestjs/config';
 import {StatusModule} from "./status/status.module";
 import {TaskModule} from "./task/task.module";
@@ -30,8 +28,7 @@ import {SeedingModule} from "./seeding/seeding.module";
         TaskModule,
         SeedingModule
     ],
-    controllers: [AppController],
-    providers: [AppService],
+    controllers: [],
+    providers: [],
 })
-export class AppModule {
-}
+export class AppModule {}

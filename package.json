@@ -9,8 +9,5 @@
   },
   "workspaces": [
     "src/*"
-  ],
-  "dependencies": {
-    "typeorm-extension": "^3.5.0"
-  }
+  ]
 }

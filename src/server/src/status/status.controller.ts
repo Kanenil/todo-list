@@ -1,8 +1,9 @@
-import {Controller, Get} from "@nestjs/common";
+import {Body, Controller, Get, Post, UsePipes, ValidationPipe} from "@nestjs/common";
 import {StatusService} from "./status.service";
-import {Status} from "./status.entity";
+import {Status} from "./entities/status.entity";
+import {CreateStatusDto} from "./dto/create-status.dto";
 
-@Controller('status')
+@Controller('statuses')
 export class StatusController {
     constructor(
         private statusService: StatusService
@@ -11,5 +12,11 @@ export class StatusController {
     @Get()
     public async getAll(): Promise<Status[]> {
         return this.statusService.getAll()
+    }
+
+    @Post()
+    @UsePipes(new ValidationPipe())
+    public async create(@Body() status: CreateStatusDto) {
+        await this.statusService.create(status);
     }
 }
