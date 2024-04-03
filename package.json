@@ -3,9 +3,14 @@
     "turbo": "^1.13.1"
   },
   "scripts": {
-    "dev": "turbo run dev"
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "start": "turbo run start"
   },
   "workspaces": [
     "src/*"
-  ]
+  ],
+  "dependencies": {
+    "typeorm-extension": "^3.5.0"
+  }
 }
