@@ -10,9 +10,14 @@ export class TaskController {
         private taskService: TaskService
     ) {}
 
-    @Get()
-    public async getAll(): Promise<Task[]> {
-        return this.taskService.getAll()
+    @Get('status/:statusId')
+    public async getAll(@Param('statusId') statusId: number): Promise<Task[]> {
+        return this.taskService.getAllByStatus(statusId);
+    }
+
+    @Get(':id')
+    public async getById(@Param('id') id: number): Promise<Task> {
+        return this.taskService.findOne(id);
     }
 
     @Post()

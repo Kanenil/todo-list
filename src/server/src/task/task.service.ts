@@ -16,8 +16,13 @@ export class TaskService {
     ) {
     }
 
-    getAll(): Promise<Task[]> {
+    getAllByStatus(statusId: number): Promise<Task[]> {
         return this.taskRepository.find({
+            where: {
+                status: {
+                    id: statusId
+                }
+            },
             relations: {
                 status: true
             }
@@ -29,6 +34,9 @@ export class TaskService {
             where: {
                 id,
             },
+            relations: {
+                status: true
+            }
         });
     }
 
